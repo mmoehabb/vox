@@ -1,4 +1,4 @@
-module vox
+module github.com/mmoehabb/vox
 
 go 1.26.5
 

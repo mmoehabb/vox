@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 
-	"vox/internal"
+	"github.com/mmoehabb/vox/internal"
 )
 
 func printEntry(entry internal.WordEntry) {

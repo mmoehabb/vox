@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"vox/internal"
+	"github.com/mmoehabb/vox/internal"
 
 	"github.com/spf13/cobra"
 )

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"vox/cmd"
+	"github.com/mmoehabb/vox/cmd"
 	"os"
 )
 
