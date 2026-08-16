@@ -9,13 +9,13 @@ CLI dictionary for managing word definitions and reference links.
 ## Installation
 
 ```bash
-go install github.com/yourusername/vox@latest
+go install github.com/mmoehabb/vox@latest
 ```
 
 Or build from source:
 
 ```bash
-git clone https://github.com/yourusername/vox
+git clone https://github.com/mmoehabb/vox
 cd vox
 go build
 ```
