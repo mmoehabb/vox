@@ -23,7 +23,7 @@ var exportCmd = &cobra.Command{
 		}
 
 		wrapper := internal.ExportWrapper{
-			Version:    "1.0.0",
+			Version:    "0.1.0",
 			ExportedAt: time.Now().UTC(),
 			Words:      words,
 		}
