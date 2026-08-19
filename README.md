@@ -1,4 +1,4 @@
-> This project has been vibed coded, using Nemotron 3 Ultra, in about 15 minutes.
+> This project has been vibe coded, using Nemotron 3 Ultra, in about 15 minutes.
 
 # vox
 
