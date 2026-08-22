@@ -19,6 +19,9 @@ func ValidateWordEntry(entry WordEntry) error {
 	if strings.TrimSpace(entry.Definition) == "" {
 		return ErrEmptyDefinition
 	}
+	if entry.Pronunciation != nil && strings.TrimSpace(*entry.Pronunciation) == "" {
+		return errors.New("pronunciation cannot be empty if provided")
+	}
 	if entry.ReferenceURL != nil && strings.TrimSpace(*entry.ReferenceURL) != "" {
 		if _, err := url.ParseRequestURI(*entry.ReferenceURL); err != nil {
 			return ErrInvalidURL

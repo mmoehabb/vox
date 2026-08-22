@@ -8,6 +8,9 @@ import (
 
 func printEntry(entry internal.WordEntry) {
 	fmt.Printf("Word: %s\n", entry.Word)
+	if entry.Pronunciation != nil && *entry.Pronunciation != "" {
+		fmt.Printf("Pronunciation: %s\n", *entry.Pronunciation)
+	}
 	fmt.Printf("Definition: %s\n", entry.Definition)
 	if entry.ReferenceURL != nil && *entry.ReferenceURL != "" {
 		fmt.Printf("Reference: %s\n", *entry.ReferenceURL)

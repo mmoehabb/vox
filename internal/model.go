@@ -13,13 +13,14 @@ type Link struct {
 type WordEntry struct {
 	Word          string   `json:"word"`
 	Definition    string   `json:"definition"`
+	Pronunciation *string  `json:"pronunciation,omitempty"`
 	ReferenceURL  *string  `json:"reference_url,omitempty"`
 	Examples      []string `json:"examples,omitempty"`
 	Links         []Link   `json:"links,omitempty"`
 }
 
 type ExportWrapper struct {
-	Version     string      `json:"version"`
-	ExportedAt  time.Time   `json:"exported_at"`
-	Words       []WordEntry `json:"words"`
+	Version    string      `json:"version"`
+	ExportedAt time.Time   `json:"exported_at"`
+	Words      []WordEntry `json:"words"`
 }

@@ -15,9 +15,10 @@ func TestStoreRoundTrip(t *testing.T) {
 	defer os.Setenv("XDG_DATA_HOME", oldEnv)
 
 	entry := WordEntry{
-		Word:       "test",
-		Definition: "a test definition",
-		Examples:   []string{"example 1", "example 2"},
+		Word:          "test",
+		Definition:    "a test definition",
+		Pronunciation: strPtr("/tɛst/"),
+		Examples:      []string{"example 1", "example 2"},
 		Links: []Link{
 			{Title: "Link 1", URL: "https://example.com"},
 		},
@@ -84,9 +85,9 @@ func TestImportExport(t *testing.T) {
 	}
 
 	wrapper := ExportWrapper{
-		Version:   "1.0.0",
+		Version:    "1.0.0",
 		ExportedAt: timeNow(),
-		Words:     words,
+		Words:      words,
 	}
 
 	exportPath := filepath.Join(tmpDir, "export.json")
@@ -187,18 +188,36 @@ func TestValidation(t *testing.T) {
 		{
 			name: "invalid reference URL",
 			entry: WordEntry{
+				Word:         "test",
+				Definition:   "a test",
+				ReferenceURL: strPtr("not-a-url"),
+			},
+			wantErr: true,
+		},
+		{
+			name: "valid entry with pronunciation",
+			entry: WordEntry{
 				Word:          "test",
 				Definition:    "a test",
-				ReferenceURL:  strPtr("not-a-url"),
+				Pronunciation: strPtr("/tɛst/"),
+			},
+			wantErr: false,
+		},
+		{
+			name: "empty pronunciation (provided but empty)",
+			entry: WordEntry{
+				Word:          "test",
+				Definition:    "a test",
+				Pronunciation: strPtr("   "),
 			},
 			wantErr: true,
 		},
 		{
 			name: "valid reference URL",
 			entry: WordEntry{
-				Word:          "test",
-				Definition:    "a test",
-				ReferenceURL:  strPtr("https://example.com"),
+				Word:         "test",
+				Definition:   "a test",
+				ReferenceURL: strPtr("https://example.com"),
 			},
 			wantErr: false,
 		},
