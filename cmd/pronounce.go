@@ -33,15 +33,6 @@ var pronounceCmd = &cobra.Command{
 			}
 			return err
 		}
-		if entry.Pronunciation == nil || strings.TrimSpace(*entry.Pronunciation) == "" {
-			return fmt.Errorf("pronunciation not available for '%s'", entry.Word)
-		}
-
-		ipa := strings.Trim(strings.TrimSpace(*entry.Pronunciation), "/")
-
-		espeakPhonemes := ipaToEspeak(ipa)
-
-		phonemeText := fmt.Sprintf("[[%s]]", espeakPhonemes)
 
 		fmt.Fprintf(os.Stderr, "Preparing TTS engine...\n")
 
@@ -90,7 +81,7 @@ var pronounceCmd = &cobra.Command{
 			return fmt.Errorf("failed to load voice profile '%s': %w", voiceName, err)
 		}
 
-		samples, err := pipeline.Synthesize(phonemeText, "en-us", profile, float32(speed))
+		samples, err := pipeline.Synthesize(entry.Word, "en-us", profile, float32(speed))
 		if err != nil {
 			return fmt.Errorf("synthesis failed: %w", err)
 		}
@@ -116,67 +107,4 @@ var pronounceCmd = &cobra.Command{
 func init() {
 	pronounceCmd.Flags().StringVar(&pronounceVoiceName, "voice", "af_heart", "Voice profile name (default: af_heart)")
 	pronounceCmd.Flags().Float64Var(&pronounceSpeed, "speed", 1.0, "Speech speed (0.5-2.0)")
-}
-
-// ipaToEspeak converts standard IPA to espeak-ng phoneme format.
-func ipaToEspeak(ipa string) string {
-	replacements := map[string]string{
-		"ə": "@",
-		"ɛ": "E",
-		"ɪ": "I",
-		"ʊ": "U",
-		"ʃ": "S",
-		"ʒ": "Z",
-		"ŋ": "N",
-		"tʃ": "tS",
-		"dʒ": "dZ",
-		"ˈ": "'",
-		"ˌ": ",",
-		"ː": ":",
-		"ɑ": "A",
-		"ɔ": "O",
-		"æ": "{",
-		"ʌ": "V",
-		"θ": "T",
-		"ð": "D",
-		"j": "j",
-		"w": "w",
-		"ɹ": "r",
-		"ɾ": "4",
-		"β": "B",
-		"ɣ": "G",
-		"ʁ": "R",
-		"ħ": "H",
-		"ʕ": "?",
-		"ʔ": "?",
-		"ɬ": "K",
-		"ɮ": "L",
-		"ɕ": "s",
-		"ʑ": "z",
-		"ɲ": "J",
-		"ɳ": "n",
-		"ɽ": "r",
-		"ɻ": "r",
-		"ʎ": "L",
-		"ʟ": "L",
-		"ɺ": "l",
-		"ɧ": "x",
-		"ʢ": "?",
-		"ʡ": "?",
-		"ɱ": "m",
-	}
-
-	result := ipa
-	for ipaChar, espeakChar := range replacements {
-		result = strings.ReplaceAll(result, ipaChar, espeakChar)
-	}
-
-	result = strings.ReplaceAll(result, "dē", "di")
-	result = strings.ReplaceAll(result, "ē", "i")
-	result = strings.ReplaceAll(result, "ō", "o")
-	result = strings.ReplaceAll(result, "ā", "a")
-	result = strings.ReplaceAll(result, "ī", "i")
-	result = strings.ReplaceAll(result, "ū", "u")
-
-	return result
 }

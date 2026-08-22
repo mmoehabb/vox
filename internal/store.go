@@ -214,9 +214,9 @@ func Random(n int) ([]WordEntry, error) {
 
 	var res []WordEntry
 	for range n {
-		randn := rand.Intn(len(words));
-		res = append(res, words[randn]);
+		randn := rand.Intn(len(words))
+		res = append(res, words[randn])
 	}
-	
+
 	return res, nil
 }
