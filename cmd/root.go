@@ -23,4 +23,5 @@ func init() {
 	rootCmd.AddCommand(exportCmd)
 	rootCmd.AddCommand(importCmd)
 	rootCmd.AddCommand(pronounceCmd)
+	rootCmd.AddCommand(randomCmd)
 }

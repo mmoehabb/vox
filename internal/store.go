@@ -3,6 +3,7 @@ package internal
 import (
 	"encoding/json"
 	"errors"
+	"math/rand"
 	"os"
 	"path/filepath"
 	"strings"
@@ -138,6 +139,8 @@ func FindFuzzy(pattern string) []WordEntry {
 }
 
 func containsFuzzy(s, pattern string) bool {
+	s = strings.ToLower(s)
+	pattern = strings.ToLower(pattern)
 	if pattern == "" {
 		return true
 	}
@@ -188,4 +191,32 @@ func GetCaseInsensitive(word string) (WordEntry, error) {
 		}
 	}
 	return WordEntry{}, ErrNotFound
+}
+
+func Random(n int) ([]WordEntry, error) {
+	words, err := Load()
+	if err != nil {
+		return nil, err
+	}
+	if len(words) == 0 {
+		return []WordEntry{}, nil
+	}
+
+	if n < 1 {
+		n = 1
+	}
+	if n > 10 {
+		n = 10
+	}
+	if n > len(words) {
+		n = len(words)
+	}
+
+	var res []WordEntry
+	for range n {
+		randn := rand.Intn(len(words));
+		res = append(res, words[randn]);
+	}
+	
+	return res, nil
 }
