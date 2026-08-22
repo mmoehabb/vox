@@ -5,6 +5,7 @@ import (
 	"errors"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 var (
@@ -137,6 +138,8 @@ func FindFuzzy(pattern string) []WordEntry {
 }
 
 func containsFuzzy(s, pattern string) bool {
+	s = strings.ToLower(s)
+	pattern = strings.ToLower(pattern)
 	if pattern == "" {
 		return true
 	}
