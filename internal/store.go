@@ -5,6 +5,7 @@ import (
 	"errors"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 var (
@@ -173,4 +174,18 @@ func Import(entries []WordEntry, override bool) error {
 
 func All() ([]WordEntry, error) {
 	return Load()
+}
+
+func GetCaseInsensitive(word string) (WordEntry, error) {
+	words, err := Load()
+	if err != nil {
+		return WordEntry{}, err
+	}
+	lower := strings.ToLower(word)
+	for _, w := range words {
+		if strings.ToLower(w.Word) == lower {
+			return w, nil
+		}
+	}
+	return WordEntry{}, ErrNotFound
 }
