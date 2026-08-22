@@ -179,6 +179,20 @@ func All() ([]WordEntry, error) {
 	return Load()
 }
 
+func GetCaseInsensitive(word string) (WordEntry, error) {
+	words, err := Load()
+	if err != nil {
+		return WordEntry{}, err
+	}
+	lower := strings.ToLower(word)
+	for _, w := range words {
+		if strings.ToLower(w.Word) == lower {
+			return w, nil
+		}
+	}
+	return WordEntry{}, ErrNotFound
+}
+
 func Random(n int) ([]WordEntry, error) {
 	words, err := Load()
 	if err != nil {
@@ -200,9 +214,9 @@ func Random(n int) ([]WordEntry, error) {
 
 	var res []WordEntry
 	for range n {
-		randn := rand.Intn(len(words));
-		res = append(res, words[randn]);
+		randn := rand.Intn(len(words))
+		res = append(res, words[randn])
 	}
-	
+
 	return res, nil
 }
