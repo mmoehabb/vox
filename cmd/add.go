@@ -10,10 +10,11 @@ import (
 )
 
 var (
-	addDefinition   string
-	addReferenceURL string
-	addExamples     []string
-	addLinks        []string
+	addDefinition    string
+	addReferenceURL  string
+	addPronunciation string
+	addExamples      []string
+	addLinks         []string
 )
 
 var addCmd = &cobra.Command{
@@ -35,6 +36,12 @@ var addCmd = &cobra.Command{
 		if strings.TrimSpace(addReferenceURL) != "" {
 			u := strings.TrimSpace(addReferenceURL)
 			refURL = &u
+		}
+
+		var pronunciation *string
+		if strings.TrimSpace(addPronunciation) != "" {
+			p := strings.TrimSpace(addPronunciation)
+			pronunciation = &p
 		}
 
 		examples := make([]string, 0, len(addExamples))
@@ -65,11 +72,12 @@ var addCmd = &cobra.Command{
 		}
 
 		entry := internal.WordEntry{
-			Word:         word,
-			Definition:   definition,
-			ReferenceURL: refURL,
-			Examples:     examples,
-			Links:        links,
+			Word:          word,
+			Definition:    definition,
+			Pronunciation: pronunciation,
+			ReferenceURL:  refURL,
+			Examples:      examples,
+			Links:         links,
 		}
 
 		if err := internal.ValidateWordEntry(entry); err != nil {
@@ -88,6 +96,7 @@ var addCmd = &cobra.Command{
 func init() {
 	addCmd.Flags().StringVarP(&addDefinition, "definition", "d", "", "Definition (required)")
 	addCmd.Flags().StringVarP(&addReferenceURL, "reference", "r", "", "Reference URL")
+	addCmd.Flags().StringVarP(&addPronunciation, "pronunciation", "p", "", "Pronunciation (e.g., IPA)")
 	addCmd.Flags().StringSliceVarP(&addExamples, "example", "e", nil, "Example sentences (repeatable)")
 	addCmd.Flags().StringSliceVarP(&addLinks, "link", "l", nil, "Links as title|url|description (repeatable)")
 	addCmd.MarkFlagRequired("definition")
