@@ -1443,12 +1443,7 @@
   },
   {
     "word": "veracity",
-    "definition": "conformity to facts; accuracy and truthfulness",
-    "pronunciation": "/vəˈrasədē/",
-    "reference_url": "https://en.wiktionary.org/wiki/veracity",
-    "examples": [
-      "Journalists worked quickly to verify the veracity of the leaked documents."
-    ]
+    "definition": "TODO"
   },
   {
     "word": "wistful",
@@ -1700,6 +1695,159 @@
     "reference_url": "https://en.wiktionary.org/wiki/prognosis",
     "examples": [
       "Because they caught the illness early, the doctor said her prognosis was excellent."
+    ]
+  },
+  {
+    "word": "preposterous",
+    "definition": "contrary to reason or common sense; utterly absurd or ridiculous",
+    "pronunciation": "/prəˈpäst(ə)rəs/",
+    "reference_url": "https://en.wiktionary.org/wiki/preposterous",
+    "examples": [
+      "The idea that we could finish the entire project in a single afternoon is preposterous."
+    ]
+  },
+  {
+    "word": "auspicious",
+    "definition": "conducive to success; favorable",
+    "pronunciation": "/ôˈspiSHəs/",
+    "reference_url": "https://en.wiktionary.org/wiki/auspicious",
+    "examples": [
+      "Winning their opening game by twenty points was an auspicious start to the season."
+    ]
+  },
+  {
+    "word": "sobriquet",
+    "definition": "a person's nickname",
+    "pronunciation": "/ˈsōbrəˌkā/",
+    "reference_url": "https://en.wiktionary.org/wiki/sobriquet",
+    "examples": [
+      "Due to his relentless work ethic, he earned the sobriquet \"The Machine\" from his teammates."
+    ]
+  },
+  {
+    "word": "vanity",
+    "definition": "excessive pride in or admiration of one's own appearance or achievements",
+    "pronunciation": "/ˈvanədē/",
+    "reference_url": "https://en.wiktionary.org/wiki/vanity",
+    "examples": [
+      "Out of pure vanity, he refused to wear his glasses in public despite barely being able to see."
+    ]
+  },
+  {
+    "word": "veneer",
+    "definition": "a thin decorative covering of fine wood applied to a coarser wood or other material, or an attractive appearance that covers or disguises someone or something's true nature or feelings",
+    "pronunciation": "/vəˈnir/",
+    "reference_url": "https://en.wiktionary.org/wiki/veneer",
+    "examples": [
+      "Behind his veneer of polite charm, he was ruthlessly ambitious."
+    ]
+  },
+  {
+    "word": "vestige",
+    "definition": "a trace of something that is disappearing or no longer exists",
+    "pronunciation": "/ˈvestij/",
+    "reference_url": "https://en.wiktionary.org/wiki/vestige",
+    "examples": [
+      "The crumbling stone wall is the last remaining vestige of the medieval fortress."
+    ]
+  },
+  {
+    "word": "valorous",
+    "definition": "showing great courage in the face of danger, especially in battle",
+    "pronunciation": "/ˈvalərəs/",
+    "reference_url": "https://en.wiktionary.org/wiki/valorous",
+    "examples": [
+      "The firefighters were awarded medals for their valorous rescue efforts during the blaze."
+    ]
+  },
+  {
+    "word": "voracious",
+    "definition": "wanting or devouring great quantities of food, or having a very eager approach to an activity",
+    "pronunciation": "/vəˈrāSHəs/",
+    "reference_url": "https://en.wiktionary.org/wiki/voracious",
+    "examples": [
+      "As a voracious reader, she easily finishes two or three novels every week."
+    ]
+  },
+  {
+    "word": "vouchsafing",
+    "definition": "giving or granting something to someone in a gracious or condescending manner",
+    "pronunciation": "/ˌvouCHˈsāfiNG/",
+    "reference_url": "https://en.wiktionary.org/wiki/vouchsafing",
+    "examples": [
+      "The reclusive director rarely grants interviews, only occasionally vouchsafing a brief comment to the press."
+    ]
+  },
+  {
+    "word": "volition",
+    "definition": "the faculty or power of using one's will",
+    "pronunciation": "/vəˈliSH(ə)n/",
+    "reference_url": "https://en.wiktionary.org/wiki/volition",
+    "examples": [
+      "Nobody forced him to resign; he left the company entirely of his own volition."
+    ]
+  },
+  {
+    "word": "verdict",
+    "definition": "a decision on a disputed issue in a civil or criminal case or an inquest",
+    "pronunciation": "/ˈvərdikt/",
+    "reference_url": "https://en.wiktionary.org/wiki/verdict",
+    "examples": [
+      "After three days of deliberation, the jury finally returned a unanimous verdict."
+    ]
+  },
+  {
+    "word": "vengeance",
+    "definition": "punishment inflicted or retribution exacted for an injury or wrong",
+    "pronunciation": "/ˈvenjəns/",
+    "reference_url": "https://en.wiktionary.org/wiki/vengeance",
+    "examples": [
+      "The betrayed knight swore vengeance against those who had framed him."
+    ]
+  },
+  {
+    "word": "votive",
+    "definition": "offered or consecrated in fulfillment of a vow",
+    "pronunciation": "/ˈvōdiv/",
+    "reference_url": "https://en.wiktionary.org/wiki/votive",
+    "examples": [
+      "Archaeologists uncovered hundreds of ancient clay votive figurines inside the temple ruins."
+    ]
+  },
+  {
+    "word": "vain",
+    "definition": "having or showing an excessively high opinion of one's appearance, abilities, or worth, or producing no result; useless",
+    "pronunciation": "/vān/",
+    "reference_url": "https://en.wiktionary.org/wiki/vain",
+    "examples": [
+      "They made a vain attempt to bail out the sinking boat with a single bucket."
+    ]
+  },
+  {
+    "word": "vindicate",
+    "definition": "to clear someone of blame or suspicion, or to show or prove to be right, reasonable, or justified",
+    "pronunciation": "/ˈvindəˌkāt/",
+    "reference_url": "https://en.wiktionary.org/wiki/vindicate",
+    "examples": [
+      "The newly discovered DNA evidence served to completely vindicate the wrongly convicted man."
+    ]
+  },
+  {
+    "word": "vigilant",
+    "definition": "keeping careful watch for possible danger or difficulties",
+    "pronunciation": "/ˈvijələnt/",
+    "reference_url": "https://en.wiktionary.org/wiki/vigilant",
+    "examples": [
+      "Lifeguards must remain vigilant at all times while swimmers are in the water."
+    ]
+  },
+  {
+    "word": "virtuous",
+    "definition": "having or showing high moral standards",
+    "pronunciation": "/ˈvərCHo͞oəs/",
+    "reference_url": "https://en.wiktionary.org/wiki/virtuous",
+    "examples": [
+      "She was widely respected in the community for leading a generous and virtuous life."
     ]
   }
 ]
